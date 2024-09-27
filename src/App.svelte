@@ -1,5 +1,6 @@
 <script>
-  let example = "Danilo";
+  import Server from './lib/Server.svelte';
 </script>
 
-<h1>{example}</h1>
+<Server />
+<Server />
