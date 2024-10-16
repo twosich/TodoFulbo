@@ -1,6 +1,6 @@
 <script>
     async function dataServer(){
-        const url = 'http://localhost:3000/';
+        const url = 'https://todofulbo.onrender.com';
         const response = await fetch(url);
         const data = await response.json()
         console.log(JSON.stringify(data));
