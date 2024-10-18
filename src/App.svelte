@@ -5,6 +5,7 @@
 
 <body>
   <div>
+    <Navbar />
   </div>
 
   <div>
