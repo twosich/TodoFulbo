@@ -1,5 +1,5 @@
 const express = require('express');
-
+const path
 
 const cors = require('cors');
 
@@ -24,3 +24,10 @@ app.get("editarPersona/:id/:nombre",function(req,resp){
     console.log(req.params.id,req.params.nombre);
     return resp.send([{id:1,nombre:"tomas"},{id:2,nombre:"maria"}]);
 })
+
+app.get ('/Imagen/:id, 
+
+let img = [
+   
+        
+]
