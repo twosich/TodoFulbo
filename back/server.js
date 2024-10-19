@@ -1,6 +1,5 @@
 const express = require('express');
-const path
-
+const path = require('path');
 const cors = require('cors');
 
 
@@ -25,9 +24,13 @@ app.get("editarPersona/:id/:nombre",function(req,resp){
     return resp.send([{id:1,nombre:"tomas"},{id:2,nombre:"maria"}]);
 })
 
-app.get ('/Imagen/:id, 
-
-let img = [
-   
-        
-]
+app.get('/img/:id', (req, res) => {
+    
+    console.log(req.params.id);
+    const imagen =req.params.id;
+    // Set the path of the image
+    const imagePath = path.join(__dirname, `imagenes/${imagen}.webp`);
+    
+    // Send the image file
+    res.sendFile(imagePath);
+  });
