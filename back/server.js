@@ -29,7 +29,7 @@ app.get('/img/:id', (req, res) => {
     console.log(req.params.id);
     const imagen =req.params.id;
     // Set the path of the image
-    const imagePath = path.join(__dirname, `imagenes/${imagen}.webp`);
+    const imagePath = path.join(__dirname, `imagenes/${imagen}.png`);
     
     // Send the image file
     res.sendFile(imagePath);
