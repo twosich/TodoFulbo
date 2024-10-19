@@ -1,32 +1,7 @@
-{
-  "compilerOptions": {
-    "moduleResolution": "bundler",
-    "target": "ESNext",
-    "module": "ESNext",
-    /**
-     * svelte-preprocess cannot figure out whether you have
-     * a value or a type, so tell TypeScript to enforce using
-     * `import type` instead of `import` for Types.
-     */
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "resolveJsonModule": true,
-    /**
-     * To have warnings / errors of the Svelte compiler at the
-     * correct position, enable source maps by default.
-     */
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    /**
-     * Typecheck JS in `.svelte` and `.js` files by default.
-     * Disable this if you'd like to use dynamic types.
-     */
-    "checkJs": true
-  },
-  /**
-   * Use global.d.ts instead of compilerOptions.types
-   * to avoid limiting type declarations.
-   */
-  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]
-}
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Fix for KB5036896" displayName="default" company="Microsoft Corporation" copyright="Microsoft Corporation" supportInformation="https://support.microsoft.com/help/5036896" creationTimeStamp="2024-04-05T10:30:39Z" lastUpdateTimeStamp="2024-04-05T10:30:39Z">
+  <assemblyIdentity name="Package_8491_for_KB5036896" version="10.0.1.14" language="neutral" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" />
+  <package identifier="KB5036896" releaseType="Security Update" restart="possible">
+    <parent buildCompare="EQ" integrate="separate" disposition="detect">
+      <parent buildCompare="EQ" integrate="separate" disposition="detect">
+        <assemblyIdentity name="WinPE-StorageWMI-Package" language="neutral" version="10.0.17763.1" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" buildType="release" />
