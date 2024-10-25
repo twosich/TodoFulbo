@@ -7,9 +7,5 @@
   <div>
     <Navbar />
   </div>
-
-  <div>
-
-  </div>
-
+  div
 </body>
