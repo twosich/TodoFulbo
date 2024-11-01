@@ -1,4 +1,5 @@
 <script>
+  import { Modals, closeModal } from 'svelte-modals'
   import Server from './lib/Server.svelte';
   import Navbar from './lib/Navbar.svelte';
   import Items from './lib/Items.svelte';
@@ -12,3 +13,7 @@
     </div>
   </div>
   </body>
+
+  <style>
+
+  </style>

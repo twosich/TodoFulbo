@@ -1,39 +1,64 @@
 <script>
-	export let isOpen = false;
-	export let close;
+	import { closeModal } from 'svelte-modals'
+	import image from '../../../back/img/5.png'
+	export let isOpen
+  
+  </script>
+  
+  {#if isOpen}
+	<div role="dialog" class="modal">
+	  <div class="grid grid-rows-3 grid-flow-col gap-4 aling-center bg-white pointer-events-auto p-4 rounded-md leading-10">
+			<div class="row-span-3">
+				<div class="mt-4">
+					<img src={image} class=" size-80 p-1" alt="" srcset="">
+				</div>	
+			</div>
 
-	function stopProp(event){
-		event.stopProp();
-	}
-</script>
+			<div class="col-span-2">
+				<div class="flex">
+					<div class="flex-1">
+						<h2 class="text-3xl font-bold">Remera Manchester City</h2>
+					</div>
+					<div class="pl-5 flex-none">
+						<button on:click={closeModal}>X</button>
+					</div>
+				</div>	
+			</div>
 
-{#if isOpen}
-	<div class="modal-overlay" on:click={close}>
-		<div class="moodal-content" on:click={stopProp}>
-			<slot></slot>
-			<button on:click={close}>Close</button>
-		</div>
+			<div class="row-span-2 col-span-2">
+				<ul>
+					<li>Ejemplo</li>
+					<li>Ejemplo</li>
+					<li>Ejemplo</li>
+				</ul>
+			</div>
 	</div>
-{/if}
+	</div>
+  {/if}
 
-<style>
-	.modal-overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: white;
-	}
-	.modal-content{
-		background-color: white;
-		padding: 1rem;
-		border-radius: 5px;
-		max-width: 500px;
-		width: 90%;
+  <style>
+  .modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-	}
+    /* allow click-through to backdrop */
+    pointer-events: none;
+  }
+
+  p {
+    margin-top: 16px;
+  }
+
+  .actions {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
 </style>

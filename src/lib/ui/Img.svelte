@@ -1,5 +1,5 @@
 <script>
-    import icon from '../../assets/shirt1.webp'
+    import icon from '../../../back/img/5.png'
 </script>
 
 <div class="relative rounded-lg bg-black">
