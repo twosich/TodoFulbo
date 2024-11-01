@@ -17,3 +17,7 @@ const usuario = new moongose.Schema({
     claveUsuario: {type: String, required: true},
     token: {type: String, required: true},
 })
+
+async function readProductos() {
+    const productos = await 
+}
