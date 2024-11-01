@@ -17,7 +17,7 @@
 			<div class="col-span-2">
 				<div class="flex">
 					<div class="flex-1">
-						<h2 class="text-3xl font-bold">Remera Manchester City</h2>
+						<h2 class="text-3xl font-bold">Camiseta Manchester City</h2>
 					</div>
 					<div class="pl-5 flex-none">
 						<button on:click={closeModal}>X</button>
@@ -26,11 +26,21 @@
 			</div>
 
 			<div class="row-span-2 col-span-2">
-				<ul>
-					<li>Ejemplo</li>
-					<li>Ejemplo</li>
-					<li>Ejemplo</li>
-				</ul>
+				<div class="grid grid-cols-1 grid-rows-3">
+					<div class="">
+						<h1>Example</h1>
+					</div>
+					<div class="">
+						<h1>Example</h1>
+					</div>
+					<div class="">
+						<button class="rounded-2xl p-3 bg-gradient-to-r from-sky-600 to-sky-800 hover:bg-pink-300 md:p-4">
+							<h1 class="text-xl md:text-2xl p-1 text-white font-bold">Comprar</h1>
+						</button>	
+					</div>
+				</div>
+
+		  
 			</div>
 	</div>
 	</div>
