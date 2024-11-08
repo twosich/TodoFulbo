@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     async function dataServer(){
         const url = 'https://todofulbo.onrender.com';
         const response = await fetch(url);

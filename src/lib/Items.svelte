@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
      import { Modals, closeModal, openModal } from 'svelte-modals'
     import Img from "./ui/Img.svelte"
     import Modal from "./ui/Modal.svelte";

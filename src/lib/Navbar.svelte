@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import icon from '../assets/logo.svg'
   import Botom from './ui/Botom.svelte'
 </script>

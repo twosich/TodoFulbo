@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import icon from '../../../back/img/5.png'
 </script>
 

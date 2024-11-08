@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { closeModal } from 'svelte-modals'
 	import image from '../../../back/img/5.png'
 	export let isOpen
@@ -56,19 +56,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* allow click-through to backdrop */
     pointer-events: none;
   }
-
-  p {
-    margin-top: 16px;
-  }
-
-  .actions {
-    margin-top: 32px;
-    display: flex;
-    justify-content: flex-end;
-  }
-
 </style>
