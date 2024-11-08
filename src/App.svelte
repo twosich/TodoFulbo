@@ -10,8 +10,6 @@
     <Navbar />
     <div class="p-2">
       <Items />
-
-      <h1 class="">Shit</h1>
     </div>
   </div>
   </body>
