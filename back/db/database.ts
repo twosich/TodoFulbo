@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-mongoose.connect('mongodb://localhost:27017/nombreDeTuBaseDeDatos', {useNewUrlParrser : true, useUnifiedTopology: true,})
+mongoose.connect('mongodb://mongo:hLtTsygwGIbGIfBnmvJVoQIUaSNwkhtI@autorack.proxy.rlwy.net:14791', {})
 
 .then(() => console.log('Conectado a MongoDB'))
 .catch(err => console.error('Error de conexión: ',err));
@@ -18,7 +18,4 @@ const usuario = new mongoose.Schema({
     token: {type: String, required: true},
 })
 
-const Producto = mongoose.model ('Producto', producto.Schema);
- 
-
-export default Producto;
+export default producto;
