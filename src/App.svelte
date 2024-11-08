@@ -13,7 +13,3 @@
     </div>
   </div>
   </body>
-
-  <style>
-
-  </style>
