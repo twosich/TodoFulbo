@@ -1,26 +1,41 @@
-const mongoose = require ('mongoose');
+const express = require('express');
+const path = require('path');
+const cors = require('cors');
 
-moongosse.connect('mongodb://localhost:27017/nombreDeTuBaseDeDatos', {useNewUrlParrser : true, useUnifiedTopology: true,})
+import Producto from "./db/database"
 
-.then(() => console.log('Conectado a MongoDB'))
-.catch(err => console.error('Error de conexión: ',err));
+const app = express();
 
-const producto = new mongoose.Schema({
-    nombre: {type: String, required: true},
-    descripcion: {type: String, required: true},
-    precio: {type: Number, required: true},
-},
-);
 
-const usuario = new moongose.Schema({
-    nombreUsuario: {type: String, required: true},
-    claveUsuario: {type: String, required: true},
-    token: {type: String, required: true},
+// Enable CORS for all routes
+app.use(cors());
+
+app.listen(3000, () => {
+   console.log(`Server is up and running on port 3000 ...`);
+});
+
+
+app.get("/",function(req,resp){
+    console.log("llego el pedido de /")
+    return resp.send([{id:1,nombre:"tomas"},{id:2,nombre:"maria"}]);
 })
 
-const Producto = mongoose.model ('Producto', productoSchema);
+app.get("editarPersona/:id/:nombre",function(req,resp){
+    console.log(req.params.id,req.params.nombre);
+    return resp.send([{id:1,nombre:"tomas"},{id:2,nombre:"maria"}]);
+})
 
-app.post ('/productos', async (req, res) => {
+app.get('/img/:id', (req, res) => {    
+    console.log(req.params.id);
+    const imagen =req.params.id;
+    // Set the path of the image
+    const imagePath = path.join(__dirname, `img/${imagen}.png`);
+    
+    // Send the image file
+    res.sendFile(imagePath);
+  });
+
+  app.post ('/productos', async (req, res) => {
     try {
         const productos = await Producto.find ();
         res.json (productos);
@@ -56,6 +71,8 @@ app.delete('/productos/:nombre', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+const PORT:number = 3000;
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
