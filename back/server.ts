@@ -1,17 +1,12 @@
-import express, { Request, Response } from 'express'; // Importa express correctamente
+import express, { Request, Response } from 'express';
 import cors from 'cors';
-import path from 'path'; // Importa path para manejar rutas de archivos
-
-// Simulación de base de datos
-import producto from "./db/database"; // Asegúrate de que este archivo exista y sea válido
+import path from 'path'; 
+import producto from "./db/database"; 
 
 const app = express();
-
-// Middleware
 app.use(cors());
-app.use(express.json()); // Permite leer el body en JSON
+app.use(express.json()); 
 
-// Rutas
 app.get("/", (req: Request, res: Response) => {
     console.log("Llego el pedido de /");
     res.send([{ id: 1, nombre: "tomas" }, { id: 2, nombre: "maria" }]);
@@ -36,7 +31,7 @@ app.get('/img/:id', (req: Request, res: Response) => {
 
 app.post('/productos', async (req: Request, res: Response) => {
     try {
-        const productos = await producto.find(); // Asegúrate de que esta función exista
+        const productos = await producto.find();
         res.json(productos);
     } catch (error: any) {
         res.status(500).json({ error: error.message });
@@ -45,9 +40,8 @@ app.post('/productos', async (req: Request, res: Response) => {
 
 app.get('/productos/:nombre', async (req: Request, res: Response) => {
     try {
-        // Simulación de búsqueda (reemplazar con lógica real)
         const nombreProducto = req.params.nombre;
-        const productoEncontrado = { nombre: nombreProducto, precio: 100 }; // Simulación
+        const productoEncontrado = { nombre: nombreProducto, precio: 100 }; 
         res.json(productoEncontrado);
     } catch (error: any) {
         res.status(500).json({ error: error.message });
@@ -58,7 +52,6 @@ app.put('/productos/:nombre', async (req: Request, res: Response) => {
     try {
         const nombreProducto = req.params.nombre;
         const datosActualizados = req.body;
-        // Simulación de actualización (reemplazar con lógica real)
         res.json({ mensaje: "Producto actualizado", producto: { nombre: nombreProducto, ...datosActualizados } });
     } catch (error: any) {
         res.status(400).json({ error: error.message });
@@ -68,14 +61,12 @@ app.put('/productos/:nombre', async (req: Request, res: Response) => {
 app.delete('/productos/:nombre', async (req: Request, res: Response) => {
     try {
         const nombreProducto = req.params.nombre;
-        // Simulación de eliminación (reemplazar con lógica real)
         res.json({ mensaje: "Producto eliminado", nombre: nombreProducto });
     } catch (error: any) {
         res.status(500).json({ error: error.message });
     }
 });
 
-// Inicialización del servidor
 const PORT: number = 3000;
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
