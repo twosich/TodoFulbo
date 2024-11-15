@@ -1,5 +1,5 @@
 <script lang="ts">
-     import { Modals, closeModal, openModal } from 'svelte-modals'
+    import { Modals, closeModal, openModal } from 'svelte-modals'
     import Img from "./ui/Img.svelte"
     import Modal from "./ui/Modal.svelte";
     import Img2 from "../../back/img/5.png"

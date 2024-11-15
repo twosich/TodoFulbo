@@ -7,7 +7,7 @@
   
   {#if isOpen}
 	<div role="dialog" class="modal">
-	  <div class="grid grid-rows-3 grid-flow-col gap-4 aling-center bg-white pointer-events-auto p-4 rounded-md leading-10">
+	  <div class="grid grid-rows-3 grid-flow-col gap-4 align-center bg-white pointer-events-auto p-4 rounded-md leading-10">
 			<div class="row-span-3">
 				<div class="mt-4">
 					<img src={image} class=" size-80 p-1" alt="" srcset="">

@@ -9,7 +9,6 @@
         const response1 = await fetch(url);
         const data1 = await response.json()
         console.log(JSON.stringify(data));
-
     }
 </script>
 
