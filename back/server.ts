@@ -1,7 +1,6 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import path from 'path'; 
-import producto from "./db/database"; 
 
 const app = express();
 app.use(cors());
@@ -29,43 +28,6 @@ app.get('/img/:id', (req: Request, res: Response) => {
     });
 });
 
-app.post('/productos', async (req: Request, res: Response) => {
-    try {
-        const productos = await producto.find();
-        res.json(productos);
-    } catch (error: any) {
-        res.status(500).json({ error: error.message });
-    }
-});
-
-app.get('/productos/:nombre', async (req: Request, res: Response) => {
-    try {
-        const nombreProducto = req.params.nombre;
-        const productoEncontrado = { nombre: nombreProducto, precio: 100 }; 
-        res.json(productoEncontrado);
-    } catch (error: any) {
-        res.status(500).json({ error: error.message });
-    }
-});
-
-app.put('/productos/:nombre', async (req: Request, res: Response) => {
-    try {
-        const nombreProducto = req.params.nombre;
-        const datosActualizados = req.body;
-        res.json({ mensaje: "Producto actualizado", producto: { nombre: nombreProducto, ...datosActualizados } });
-    } catch (error: any) {
-        res.status(400).json({ error: error.message });
-    }
-});
-
-app.delete('/productos/:nombre', async (req: Request, res: Response) => {
-    try {
-        const nombreProducto = req.params.nombre;
-        res.json({ mensaje: "Producto eliminado", nombre: nombreProducto });
-    } catch (error: any) {
-        res.status(500).json({ error: error.message });
-    }
-});
 
 const PORT: number = 3000;
 app.listen(PORT, () => {
