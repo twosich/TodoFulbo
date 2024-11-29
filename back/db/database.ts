@@ -1,7 +1,7 @@
 import { MongoClient, Db, Collection } from "mongodb";
 
-const uri = "mongodb://mongo:hLtTsygwGIbGIfBnmvJVoQIUaSNwkhtI@autorack.proxy.rlwy.net:14791"
-const dbName = "todofulbo"
+const uri = "mongodb+srv://twosich12:<password>@cluster0.ys3bn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const dbName = "todofulbo";
 let db: Db;
 const collections: Map<string, Collection<any>> = new Map();
 
