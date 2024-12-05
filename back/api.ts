@@ -1,55 +1,33 @@
-import express, { Request, Response, Router } from "express";
-import { getCollection } from "./db/database";
-import { Usuario, Producto } from "./db/schemas";
+import { Router, Request, Response } from "express";
+import { usuarios, productos } from "./db";
 
 const router = Router();
-const usuariosCollection = getCollection<Usuario>("usuarios");
-const productosCollection = getCollection<Producto>("productos");
 
-router.post("/user"), async (req: Request, res: Response) => {
-    try {
-        const addUser: Usuario = req.body;
-        const result = await usuariosCollection.insertOne(addUser);
-        res.status(201).json ({ id: result.insertedId,})
-    } catch (error) {
-        res.status(500).json({
-            error
-        })
-    }
-}
+router.get("/usuarios", (req: Request, res: Response) => {
+  res.json(usuarios);
+});
 
-router.post("/producto"), async (req: Request, res: Response) => {
-    try {
-        const addProducto: Producto = req.body;
-        const result = await productosCollection.insertOne(addProducto);
-        res.status(201).json ({ id: result.insertedId,})
-    } catch (error) {
-        res.status(500).json({
-            error
-        })
-    }
-}
+router.get("/usuarios/:id", (req: Request, res: Response) => {
+  const id = parseInt(req.params.id);
+  const usuario = usuarios.find((u) => u.id === id);
+  if (!usuario) {
+    return res.status(404).json({ mensaje: "Usuario no encontrado" });
+  }
+  res.json(usuario);
+});
 
-router.post("/usuarios"), async (req: Request, res: Response) => {
-    try {
-        const users = await usuariosCollection.find({}).toArray();
-        res.status(200).json(users);
-    } catch (error) {
-        res.status(500).json({
-            error
-        })
-    }
-}
 
-router.post("/productos"), async (req: Request, res: Response) => {
-    try {
-        const producto = await productosCollection.find({}).toArray();
-        res.status(200).json(producto);
-    } catch (error) {
-        res.status(500).json({
-            error
-        })
-    }
-}
+router.get("/productos", (req: Request, res: Response) => {
+  res.json(productos);
+});
+
+router.get("/productos/:id", (req: Request, res: Response) => {
+  const id = parseInt(req.params.id);
+  const producto = productos.find((p) => p.id === id);
+  if (!producto) {
+    return res.status(404).json({ mensaje: "Producto no encontrado" });
+  }
+  res.json(producto);
+});
 
 export default router;

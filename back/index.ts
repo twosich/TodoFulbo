@@ -1,22 +1,19 @@
 import express from "express";
-import router from "./api";
-import { connetcToMongoDB } from "./db/database";
 import cors from "cors";
+import path from "path";
+import router from "./api";
 
 const app = express();
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
 
-(async () => {
-    try {
-        await connetcToMongoDB();
-        app.use(router);
+const publicPath = path.resolve(__dirname, "public");
+app.use("/img", express.static(publicPath));
 
-        app.listen(PORT, () => {
-            console.log("Server conectado en el puert", PORT)
-        })
-    } catch(error) {
-        console.error("Error al iniciar al servidor")
-    }
-})();
+app.use(router);
+
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+});
