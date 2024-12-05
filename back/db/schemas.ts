@@ -10,3 +10,4 @@ export interface Producto {
     descripcion: String;
     imagen: String;
 }
+
