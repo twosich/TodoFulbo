@@ -31,7 +31,7 @@ export const usuarios = [
         id: 2,
         precio: 15.000,
         descripcion: "Esta camiseta de fútbol para hombre se inspira en el diseño de la primera equipación y actualiza las míticas rayas blancas y negras del club turinés. Presenta un panel rectangular de color negro en la espalda que mantiene vivo el legado de la Juventus.",
-        imagen: "https://w7.pngwing.com/pngs/104/775/png-transparent-juventus-f-c-women-derby-della-mole-serie-a-juventus-store-football-tshirt-white-sport.png"
+        imagen: "https://soccerpost.com/cdn/shop/files/ScreenShot2023-08-10at10.10.05AM_clipped_rev_1.png?v=1691769177"
     }
     ,
     {
