@@ -1,7 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
 	  let product = [];
-    let example = []
 
 	  onMount(async () => {
     	  const response = await fetch("https://todofulbo.onrender.com/productos");
