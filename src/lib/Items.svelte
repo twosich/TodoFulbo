@@ -3,7 +3,7 @@
 	  let product = [];
 
 	  onMount(async () => {
-    	  const response = await fetch("http://localhost:3000/productos");
+    	  const response = await fetch("https://916f-45-167-220-73.ngrok-free.app");
     	  product = await response.json();
   		}
 	  );
